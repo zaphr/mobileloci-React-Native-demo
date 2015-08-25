@@ -1,4 +1,6 @@
 var React = require('react-native');
+var BoardTile = require('./BoardTile');
+var Board = require('./Board');
 
 var {
     AppRegistry,
@@ -13,9 +15,11 @@ class Main extends React.Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-            <Text style={styles.title}>This is main</Text>
-                <Image style={styles.image}
-                       source={require('image!cat')}  />
+
+                <Board columns={7} rows={8}/>
+
+
+
             </View>
         );
     }
@@ -27,8 +31,12 @@ var styles = StyleSheet.create({
         padding: 30,
         marginTop: 65,
         flexDirection: 'column',
-        justifyContent: 'center',
-        backgroundColor: '#48BBEC'
+        //justifyContent: 'center',
+        backgroundColor: 'grey',
+        borderWidth: 2,
+        borderColor: 'black',
+        //width: 100,
+        flexWrap: 'wrap'
     },
     title: {
         marginBottom: 20,
@@ -36,14 +44,6 @@ var styles = StyleSheet.create({
         textAlign: 'center',
         color: '#fff'
     },
-    image: {
-        height: 125,
-        width: 125,
-        borderRadius: 65,
-        marginTop: 10,
-        alignSelf: 'center'
-    },
-
 
     searchInput: {
         height: 50,
@@ -54,23 +54,6 @@ var styles = StyleSheet.create({
         borderColor: 'white',
         borderRadius: 8,
         color: 'white'
-    },
-    buttonText: {
-        fontSize: 18,
-        color: '#111',
-        alignSelf: 'center'
-    },
-    button: {
-        height: 45,
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        borderColor: 'white',
-        borderWidth: 1,
-        borderRadius: 8,
-        marginBottom: 10,
-        marginTop: 10,
-        alignSelf: 'stretch',
-        justifyContent: 'center'
     },
 });
 
