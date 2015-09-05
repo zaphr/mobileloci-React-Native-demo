@@ -14,7 +14,7 @@ class BoardTile extends React.Component {
         return (
             <View>
                 <Image style={styles.image}
-                       source={this.props.image}  />
+                       source={this.props.image} />
             </View>
         );
     }

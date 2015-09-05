@@ -69,13 +69,6 @@ class Board extends React.Component {
 
     ///
 
-    getInitialState() {
-        console.log('getInitialState');
-        return {
-            tiles: this.generateTilesForBoard(this.props.rows, this.props.columns)
-        }
-    }
-
     render() {
         var tiles = this.state.tiles.map((item, index) => {
            return (
@@ -92,7 +85,6 @@ class Board extends React.Component {
             </View>
         );
     }
-
 
 }
 
