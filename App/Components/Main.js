@@ -2,32 +2,24 @@ var React = require('react-native');
 var BoardTile = require('./BoardTile');
 var Board = require('./Board');
 
-//var Redux = require('redux');
-//
-//
-//function board(state = {foo:'bar'}, action) {
-//    switch (action.type) {
-//        case 'INCREMENT':
-//            return state;
-//        case 'DECREMENT':
-//            return state;
-//        default:
-//            return state;
-//    }
-//}
-//
-//let store = Redux.createStore(board);
-//
-//store.subscribe(() =>
-//        console.log("store.getState: ", store.getState())
-//);
-//
-//store.dispatch({ type: 'INCREMENT' });
-//// 1
-//store.dispatch({ type: 'INCREMENT' });
-//// 2
-//store.dispatch({ type: 'DECREMENT' });
-//
+var Redux = require('react-redux/native');
+
+
+function mapStateToProps(state) {
+    return {
+        rows: state.rows,
+        columns: state.columns,
+        tiles: state.tiles
+    };
+}
+
+// Which action creators does it want to receive by props?
+function mapDispatchToProps(dispatch) {
+    return {
+        onIncrement: () => dispatch(increment())
+    };
+}
+
 var {
     AppRegistry,
     StyleSheet,
@@ -36,15 +28,17 @@ var {
     Image
     } = React;
 
+
 class Main extends React.Component {
+    getInitialState
+
     render() {
         return (
             <View style={styles.mainContainer}>
-
-                <Board columns={7} rows={8}/>
-
-
-
+                <Board columns={this.props.columns}
+                       rows={this.props.rows}
+                       tiles={this.props.tiles}
+                />
             </View>
         );
     }
@@ -82,4 +76,7 @@ var styles = StyleSheet.create({
     },
 });
 
-module.exports = Main;
+module.exports = Redux.connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Main);
