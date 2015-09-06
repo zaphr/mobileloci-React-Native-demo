@@ -5,7 +5,6 @@ var {
     StyleSheet,
     Text,
     View,
-    NavigatorIOS,
     Image
     } = React;
 

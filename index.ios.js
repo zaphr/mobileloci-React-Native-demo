@@ -11,20 +11,14 @@ var {
     AppRegistry,
     StyleSheet,
     Text,
-    View,
-    NavigatorIOS
+    View
     } = React;
+
 
 class mobileloci extends React.Component {
     render() {
         return (
-            <NavigatorIOS style={styles.container}
-                          initialRoute={{
-        component: Main,
-        title: 'Github Notetaker'
-      }}
-            />
-
+          <Main />
         );
     }
 }
