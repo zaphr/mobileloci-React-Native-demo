@@ -30,7 +30,6 @@ var {
 
 
 class Main extends React.Component {
-    getInitialState
 
     render() {
         return (

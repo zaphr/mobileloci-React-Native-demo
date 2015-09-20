@@ -10,7 +10,6 @@ var {
     } = React;
 
 class Board extends React.Component {
-
     render() {
         var tiles = this.props.tiles.map((item, index) => {
            return (
@@ -27,7 +26,6 @@ class Board extends React.Component {
             </View>
         );
     }
-
 }
 
 var styles = StyleSheet.create({
