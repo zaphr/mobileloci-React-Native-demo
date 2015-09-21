@@ -12,11 +12,12 @@ var {
 class Board extends React.Component {
     render() {
         var tiles = this.props.tiles.map((item, index) => {
+            console.log("tilezz: ", item);
            return (
                <View key={index}>
-                   <BoardTile word={item.word} image={item.image}/>
+                   <BoardTile word={item.word} image={item.image}
+                   column={item.column} row={item.row}/>
                </View>
-
            ) ;
         });
         return (

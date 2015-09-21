@@ -45,10 +45,10 @@ let imageForWord = (word) => {
 }
 
 let generateTilesForBoard = (numRows, numColumns) => {
-    var tiles = [];
-    for (var column = 0; column < numColumns; column++) {
-        for (var row = 0; row < numRows; row++) {
-            var word = randomTile();
+    let tiles = [];
+    for (let column = 0; column < numColumns; column++) {
+        for (let row = 0; row < numRows; row++) {
+            let word = randomTile();
             tiles.push(
                 {
                     column: column,

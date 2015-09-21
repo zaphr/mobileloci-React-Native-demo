@@ -10,6 +10,22 @@ var {
 
 class BoardTile extends React.Component {
     render() {
+
+        let styles = StyleSheet.create({
+            image: {
+                height: 50,
+                width: 50,
+                left: this.props.column * 50,
+                top: this.props.row * 50,
+                //borderRadius: 5,
+                //marginTop: 10,
+                //alignSelf: 'center',
+                borderColor: 'white',
+                borderWidth: 1,
+                //borderRadius: 8,
+            },
+        });
+
         return (
             <View>
                 <Image style={styles.image}
@@ -19,18 +35,7 @@ class BoardTile extends React.Component {
     }
 }
 
-var styles = StyleSheet.create({
-    image: {
-        height: 50,
-        width: 50,
-        //borderRadius: 5,
-        //marginTop: 10,
-        //alignSelf: 'center',
-        borderColor: 'white',
-        borderWidth: 1,
-        //borderRadius: 8,
-    },
-});
+
 
 BoardTile.propTypes = {
     word: React.PropTypes.string.isRequired
