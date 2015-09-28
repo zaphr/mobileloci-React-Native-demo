@@ -15,21 +15,23 @@ class BoardTile extends React.Component {
             image: {
                 height: 50,
                 width: 50,
-                left: this.props.column * 50,
-                top: this.props.row * 50,
-                //borderRadius: 5,
-                //marginTop: 10,
-                //alignSelf: 'center',
+            },
+            container: {
+                //left: this.props.column * 60,
+                //top: this.props.row * 60,
                 borderColor: 'white',
                 borderWidth: 1,
-                //borderRadius: 8,
-            },
+                height: 80,
+                width: 80,
+            }
         });
 
         return (
-            <View>
+            <View style={styles.container}>
                 <Image style={styles.image}
                        source={this.props.image} />
+                <Text>C:{this.props.column}|R:{this.props.row}</Text>
+
             </View>
         );
     }
@@ -40,7 +42,6 @@ class BoardTile extends React.Component {
 BoardTile.propTypes = {
     word: React.PropTypes.string.isRequired
 };
-
 
 
 module.exports = BoardTile;

@@ -1,5 +1,5 @@
 var React = require('react-native');
-var BoardTile = require('./BoardTile');
+var BoardColumn = require('./BoardColumn');
 
 var {
     AppRegistry,
@@ -11,40 +11,42 @@ var {
 
 class Board extends React.Component {
     render() {
-        var tiles = this.props.tiles.map((item, index) => {
-            console.log("tilezz: ", item);
+        let columns = this.tileColumns(this.props.tiles, this.props.rows);
+        let columnElements = columns.map((item, index) => {
            return (
                <View key={index}>
-                   <BoardTile word={item.word} image={item.image}
-                   column={item.column} row={item.row}/>
+                   <BoardColumn tiles={item}/>
                </View>
            ) ;
         });
         return (
             <View style={styles.board}>
-                <Text style={styles.title}>Col: {this.props.columns} Row: {this.props.rows}</Text>
-                {tiles}
+                {columnElements}
             </View>
         );
+    }
+
+    tileColumns(tiles, rowLength) {
+        let columns = [];
+        for(let i = 0; i < tiles.length; i+= rowLength){
+            columns.push(tiles.slice(i, i + rowLength));
+        }
+        return columns;
     }
 }
 
 var styles = StyleSheet.create({
-    title: {
-        marginBottom: 20,
-        fontSize: 25,
-        textAlign: 'center',
-        color: '#fff'
-    },
+
     board: {
-        height: 500,
-        width: 300,
-        //borderRadius: 5,
-        //marginTop: 10,
+        //height: 500,
+        //width: 300,
+
+        flex: 1,
+        flexDirection: 'row',
+
         alignSelf: 'center',
         borderColor: 'white',
         borderWidth: 1,
-        //borderRadius: 8,
     },
 });
 

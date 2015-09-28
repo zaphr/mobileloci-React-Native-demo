@@ -63,8 +63,8 @@ let generateTilesForBoard = (numRows, numColumns) => {
 
 
 let initialState = {
-    rows: 1,
-    columns: 2,
+    rows: 5,
+    columns: 4,
     tiles: []
 };
 
@@ -93,9 +93,9 @@ let board = (state = initialState, action) => {
 
 let store = ReduxBase.createStore(board);
 
-store.dispatch({ type: 'ADD_COLUMN' });
-store.dispatch({ type: 'ADD_COLUMN' });
-store.dispatch({ type: 'ADD_ROW' });
+//store.dispatch({ type: 'ADD_COLUMN' });
+//store.dispatch({ type: 'ADD_COLUMN' });
+//store.dispatch({ type: 'ADD_ROW' });
 store.dispatch({ type: 'POPULATE_TILES' });
 
 
@@ -112,7 +112,7 @@ class mobileloci extends React.Component {
 
 var styles = StyleSheet.create({
     container:{
-        flex: 1,
+        //flex: 1,
         backgroundColor: '#111111'
     },
 });

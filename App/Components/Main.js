@@ -45,34 +45,18 @@ class Main extends React.Component {
 
 var styles = StyleSheet.create({
     mainContainer: {
-        flex: 1,
-        padding: 30,
+        //flex: 1,
+        //padding: 30,
         marginTop: 65,
-        flexDirection: 'column',
+        //flexDirection: 'column',
         //justifyContent: 'center',
         backgroundColor: 'grey',
-        borderWidth: 2,
+        borderWidth: 5,
         borderColor: 'black',
         //width: 100,
-        flexWrap: 'wrap'
-    },
-    title: {
-        marginBottom: 20,
-        fontSize: 25,
-        textAlign: 'center',
-        color: '#fff'
+        //flexWrap: 'wrap'
     },
 
-    searchInput: {
-        height: 50,
-        padding: 4,
-        marginRight: 5,
-        fontSize: 23,
-        borderWidth: 1,
-        borderColor: 'white',
-        borderRadius: 8,
-        color: 'white'
-    },
 });
 
 module.exports = Redux.connect(
