@@ -28,27 +28,10 @@ class BoardColumn extends React.Component {
 }
 
 var styles = StyleSheet.create({
-    title: {
-        marginBottom: 20,
-        fontSize: 25,
-        textAlign: 'center',
-        color: '#fff'
-    },
     boardColumn: {
-        //height: 500,
-        //width: 300,
-        //borderRadius: 5,
-        //marginTop: 10,
-        //alignSelf: 'center',
         borderColor: 'blue',
         borderWidth: 5,
-        //borderRadius: 8,
     },
 });
-
-//Board.propTypes = {
-//    columns: React.PropTypes.number.isRequired,
-//    rows: React.PropTypes.number.isRequired
-//};
 
 module.exports = BoardColumn;

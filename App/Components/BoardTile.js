@@ -17,12 +17,10 @@ class BoardTile extends React.Component {
                 width: 50,
             },
             container: {
-                //left: this.props.column * 60,
-                //top: this.props.row * 60,
                 borderColor: 'white',
                 borderWidth: 1,
-                height: 80,
-                width: 80,
+                height: 70,
+                width: 70,
             }
         });
 
@@ -34,6 +32,7 @@ class BoardTile extends React.Component {
 
             </View>
         );
+
     }
 }
 

@@ -15,7 +15,7 @@ class Board extends React.Component {
         let columnElements = columns.map((item, index) => {
            return (
                <View key={index}>
-                   <BoardColumn tiles={item}/>
+                   <BoardColumn tiles={item.reverse()}/>
                </View>
            ) ;
         });
@@ -38,12 +38,8 @@ class Board extends React.Component {
 var styles = StyleSheet.create({
 
     board: {
-        //height: 500,
-        //width: 300,
-
         flex: 1,
         flexDirection: 'row',
-
         alignSelf: 'center',
         borderColor: 'white',
         borderWidth: 1,
