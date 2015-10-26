@@ -29,8 +29,8 @@ class BoardColumn extends React.Component {
 
 var styles = StyleSheet.create({
     boardColumn: {
-        borderColor: 'blue',
-        borderWidth: 5,
+        //borderColor: 'blue',
+        //borderWidth: 5,
     },
 });
 

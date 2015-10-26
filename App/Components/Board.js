@@ -41,8 +41,9 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignSelf: 'center',
-        borderColor: 'white',
+        borderColor: 'red',
         borderWidth: 1,
+        left: 0
     },
 });
 

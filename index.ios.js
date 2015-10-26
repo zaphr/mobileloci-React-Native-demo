@@ -94,7 +94,6 @@ let board = (state = initialState, action) => {
 let store = ReduxBase.createStore(board);
 
 //store.dispatch({ type: 'ADD_COLUMN' });
-//store.dispatch({ type: 'ADD_COLUMN' });
 //store.dispatch({ type: 'ADD_ROW' });
 store.dispatch({ type: 'POPULATE_TILES' });
 
