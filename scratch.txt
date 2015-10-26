@@ -1,0 +1,1 @@
+"react-redux": "git+ssh://git@github.com/rackt/react-redux.git#v3.1.0",
