@@ -17,8 +17,6 @@ class BoardTile extends React.Component {
                 width: 50,
                 borderColor: 'red',
                 borderWidth: 1,
-
-
             },
             container: {
                 borderColor: 'white',
