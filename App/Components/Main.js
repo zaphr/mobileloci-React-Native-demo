@@ -4,12 +4,12 @@ var Board = require('./Board');
 
 var Redux = require('react-redux/native');
 
-
 function mapStateToProps(state) {
     return {
         rows: state.rows,
         columns: state.columns,
-        tiles: state.tiles
+        tiles: state.tiles,
+        tileSize: state.tileSize
     };
 }
 
@@ -36,6 +36,7 @@ class Main extends React.Component {
             <View style={styles.mainContainer}>
                 <Board columns={this.props.columns}
                        rows={this.props.rows}
+                       tileSize={this.props.tileSize}
                        tiles={this.props.tiles}
                 />
             </View>
@@ -55,7 +56,7 @@ var styles = StyleSheet.create({
         borderColor: 'black',
         //width: 100,
         //flexWrap: 'wrap'
-    },
+    }
 
 });
 

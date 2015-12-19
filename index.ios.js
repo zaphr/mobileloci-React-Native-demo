@@ -3,6 +3,8 @@ var Main = require('./App/Components/Main');
 var Redux = require('react-redux/native');
 var ReduxBase = require('redux');
 
+import Dimensions from 'Dimensions';
+
 var {
     AppRegistry,
     StyleSheet,
@@ -64,8 +66,12 @@ let generateTilesForBoard = (numRows, numColumns) => {
 
 let initialState = {
     rows: 5,
-    columns: 4,
+    columns: 8,
     tiles: []
+};
+
+let tileSizeForColumns = (numColumns) => {
+    return Dimensions.get('window').width / numColumns - 1;
 };
 
 let board = (state = initialState, action) => {
@@ -83,6 +89,7 @@ let board = (state = initialState, action) => {
         case 'POPULATE_TILES':
             return {
                 ...state,
+                tileSize: tileSizeForColumns(state.columns),
                 tiles: generateTilesForBoard(state.rows, state.columns)
             };
         default:

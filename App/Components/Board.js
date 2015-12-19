@@ -15,7 +15,8 @@ class Board extends React.Component {
         let columnElements = columns.map((item, index) => {
            return (
                <View key={index}>
-                   <BoardColumn tiles={item.reverse()}/>
+                   <BoardColumn tileSize={this.props.tileSize}
+                       tiles={item.reverse()}/>
                </View>
            ) ;
         });
@@ -41,15 +42,16 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignSelf: 'center',
-        borderColor: 'red',
-        borderWidth: 1,
+        //borderColor: 'red',
+        //borderWidth: 1,
         left: 0
     },
 });
 
 Board.propTypes = {
     columns: React.PropTypes.number.isRequired,
-    rows: React.PropTypes.number.isRequired
+    rows: React.PropTypes.number.isRequired,
+    tileSize: React.PropTypes.number.isRequired
 };
 
 module.exports = Board;

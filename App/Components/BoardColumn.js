@@ -15,7 +15,8 @@ class BoardColumn extends React.Component {
            return (
                <View key={index}>
                    <BoardTile word={item.word} image={item.image}
-                   column={item.column} row={item.row}/>
+                   column={item.column} row={item.row}
+                              tileSize={this.props.tileSize}/>
                </View>
            ) ;
         });

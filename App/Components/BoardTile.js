@@ -13,16 +13,16 @@ class BoardTile extends React.Component {
 
         let styles = StyleSheet.create({
             image: {
-                height: 50,
-                width: 50,
-                borderColor: 'red',
-                borderWidth: 1,
+                height: this.props.tileSize - 15,
+                width: this.props.tileSize - 15,
+                //borderColor: 'red',
+                //borderWidth: 1,
             },
             container: {
                 borderColor: 'white',
                 borderWidth: 1,
-                height: 70,
-                width: 70,
+                height: this.props.tileSize,
+                width: this.props.tileSize,
                 flex: 1,
                 alignItems: 'center'
             },
@@ -32,8 +32,8 @@ class BoardTile extends React.Component {
                 //opacity: 0.1
             },
             backdropView: {
-                height: 70,
-                width: 70,
+                height: this.props.tileSize,
+                width: this.props.tileSize,
                 backgroundColor: 'rgba(0,0,0,0)'
             }
         });
@@ -42,9 +42,6 @@ class BoardTile extends React.Component {
             <View style={styles.container}>
                 <Image style={styles.image}
                        source={this.props.image}>
-                    <View style={styles.backdropView}>
-                    <Text style={styles.debugText}>C:{this.props.column}|R:{this.props.row}</Text>
-                        </View>
                 </Image>
 
 
@@ -52,6 +49,8 @@ class BoardTile extends React.Component {
         );
     }
 }
+
+
 
 
 
